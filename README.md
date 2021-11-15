@@ -1,4 +1,3 @@
-# github-actions-docker
 
 # Github Actions + Docker + React TS
 
