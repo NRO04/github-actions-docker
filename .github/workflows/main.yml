@@ -10,7 +10,7 @@ jobs:
   build_image:
     name: upload image to Dockerhub.
     #defines the type of operating system on which the job will run.
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
 
     # this a sequence of tasks that will be executed
     steps:
