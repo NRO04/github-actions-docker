@@ -1,0 +1,33 @@
+name: CI_RO
+
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [main]
+
+jobs:
+  #bellow is a job name, is defined by user.
+  build_image:
+    name: upload image to Dockerhub.
+    #defines the type of operating system on which the job will run.
+    runs-on: ubuntu-lastest
+
+    # this a sequence of tasks that will be executed
+    steps:
+      #Below is the name of one of the task sequences.
+      - name: Pull repository into Virtual Machine
+
+      #uses actions/checkout for pull repository into the Virtual Machine, in this case ubuntu-lastest.
+      - uses: actions/checout@master
+        run: echo pulling the repository.
+
+      - name: build and push to docker.
+      # This action will build and push the image to dokcerhub.
+      - uses: docker/build-push-action@v1
+        # Bellow are arguments for the above action.
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+        # uses the name repository of github for dockerhubs's name repository.
+          repository: ${{ github.repository }}
+          tag_with_ref: true
