@@ -15,20 +15,20 @@ jobs:
     # this a sequence of tasks that will be executed
     steps:
       #every step must define a `uses` or `run` key
-      - uses: actions/checkout@master
       #Below is the name of one of the task sequences.
       - name: Pull repository into Virtual Machine
+        uses: actions/checkout@master
 
         #uses actions/checkout for pull repository into the Virtual Machine, in this case ubuntu-lastest.
         run: echo pulling the repository.
 
-      - uses: docker/build-push-action@v1
+      - uses: NRO04/docker-build-push-action@v1
         # This action will build and push the image to dokcerhub.
 
         # Bellow are arguments for the above action.
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          name-repository: docker-react-github-actions
+          tag: v1
           # uses the name repository of github for dockerhubs's name repository.
-          repository: ${{ github.repository }}
-          tag_with_ref: true
+          docker-username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          docker-password: ${{ secrets.DOCKER_HUB_PASSWORD }}
