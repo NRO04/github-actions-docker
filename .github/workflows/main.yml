@@ -23,8 +23,7 @@ jobs:
         run: echo pulling the repository.
 
       - uses: docker/build-push-action@v1
-      # This action will build and push the image to dokcerhub.
-      - name: build and push to docker.
+        # This action will build and push the image to dokcerhub.
 
         # Bellow are arguments for the above action.
         with:
