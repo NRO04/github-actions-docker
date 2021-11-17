@@ -15,7 +15,7 @@ jobs:
     # this a sequence of tasks that will be executed
     steps:
       #every step must define a `uses` or `run` key
-      - uses: actions/checout@master
+      - uses: actions/checkout@master
       #Below is the name of one of the task sequences.
       - name: Pull repository into Virtual Machine
 
