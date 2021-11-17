@@ -17,10 +17,8 @@ jobs:
       #every step must define a `uses` or `run` key
       #Below is the name of one of the task sequences.
       - name: Pull repository into Virtual Machine
-        uses: actions/checkout@master
-
         #uses actions/checkout for pull repository into the Virtual Machine, in this case ubuntu-lastest.
-        run: echo pulling the repository.
+        uses: actions/checkout@master
 
       - uses: NRO04/docker-build-push-action@v1
         # This action will build and push the image to dokcerhub.
