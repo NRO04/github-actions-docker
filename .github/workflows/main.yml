@@ -25,7 +25,6 @@ jobs:
 
         # Bellow are arguments for the above action.
         with:
-          name-repository: docker-react-github-actions
           tag: v1
           # uses the name repository of github for dockerhubs's name repository.
           docker-username: ${{ secrets.DOCKER_HUB_USERNAME }}
