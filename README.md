@@ -5,6 +5,6 @@ La finalidad de este repositorio es integrar el codigo usando CI, al momento de 
 
 Usando Docker Action
 
-RO
+RO V2
 
 
